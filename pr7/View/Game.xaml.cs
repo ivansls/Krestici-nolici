@@ -1,5 +1,4 @@
 ﻿using pr7.ViewModel;
-using pr7.ViewModel.Inet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,19 +23,7 @@ namespace pr7.View
         public Game()
         {
             InitializeComponent();
-            
-            if (GameViewModel.isServer == true)
-            {
-                MessageBox.Show("1");
-                Server server = new Server();
-                server.Create();
-            }
-            else
-            {
-                Client client = new Client();
-                client.Connect();
-                MessageBox.Show("2");
-            }
+           
             DataContext = new GameViewModel();
         }
     }
