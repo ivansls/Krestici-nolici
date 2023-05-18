@@ -13,6 +13,7 @@ namespace pr7.ViewModel.Logic_Helper
     {
         Random rnd = new Random();
         int _answer = 0;
+        
         public int Random_()
         {
             bool flag = true;

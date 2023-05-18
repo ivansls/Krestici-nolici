@@ -7,6 +7,19 @@
         mc:Ignorable="d"
         Title="Statistic" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <DataGrid Grid.ColumnSpan="3" ItemsSource="{Binding List}"/>
+        <Button Content="BACK"  Grid.Row="1" />
+        <TextBlock Grid.Column="2"  Grid.Row="1" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="2"  Grid.Row="1" Text="TextBlock" VerticalAlignment="Center"/>
+        <TextBlock Grid.Column="2" Grid.Row="1"  Text="TextBlock" VerticalAlignment="Bottom"/>
     </Grid>
 </Window>

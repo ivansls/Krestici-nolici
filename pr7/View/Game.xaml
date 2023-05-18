@@ -29,9 +29,9 @@
         <Button Content="{Binding answer6}" Command="{Binding but7}" Grid.Column="0" Grid.Row="2" Margin="10,10,10,10" IsEnabled="{Binding Enable7}"/>
         <Button Content="{Binding answer7}" Command="{Binding but8}" Grid.Column="1" Grid.Row="2" Margin="10,10,10,10" IsEnabled="{Binding Enable8}"/>
         <Button  Content="{Binding answer8}" Command="{Binding but9}" Grid.Column="2" Grid.Row="2" Margin="10,10,10,10" IsEnabled="{Binding Enable9}"/>
-        <RadioButton Content="{Binding user}" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" Command="{Binding User_}"/>
-        <RadioButton  Content="Robot"  VerticalAlignment="Center" Grid.Column="2" Grid.Row="3" Command="{Binding Robot_}"/>
-        <TextBlock Text="{Binding user}" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <Button  Content="Statistic" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="3"/>
+        <RadioButton Content="{Binding user}" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" Command="{Binding User_}" IsChecked="{Binding ch_us}"/>
+        <RadioButton  Content="Robot"  VerticalAlignment="Center" Grid.Column="2" Grid.Row="3" Command="{Binding Robot_}" IsChecked="{Binding ch_ro}"/>
+        <TextBlock Text="Выбери" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button  Content="Statistic" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="3" Command="{Binding Stat}"/>
     </Grid>
 </Window>

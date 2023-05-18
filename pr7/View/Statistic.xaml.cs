@@ -1,4 +1,5 @@
-﻿using System;
+﻿using pr7.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,7 @@ namespace pr7.View
         public Statistic()
         {
             InitializeComponent();
+            DataContext = new StatisticViewModel();
         }
     }
 }

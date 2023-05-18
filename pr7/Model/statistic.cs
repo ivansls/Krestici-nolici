@@ -8,7 +8,7 @@ namespace pr7.Model
 {
     internal class statistic
     {
-        public string name;
-        public int GM;
+        public string name { get; set; }
+        public int GM { get; set; } 
     }
 }

@@ -1,4 +1,5 @@
-﻿using pr7.View;
+﻿using pr7.Model;
+using pr7.View;
 using pr7.ViewModel.Helpers;
 using pr7.ViewModel.Logic_Helper;
 using System;
@@ -35,9 +36,30 @@ namespace pr7.ViewModel
 
 
 
+        public static List<statistic> st = new List<statistic>();
 
 
+        public static string ch_val = "false";
 
+        public string ch_us
+        {
+            get { return ch_val; }
+            set
+            {
+                ch_val = value;
+                OnPropertyChenged();
+            }
+        }
+
+        public string ch_ro
+        {
+            get { return ch_val; }
+            set
+            {
+                ch_val = value;
+                OnPropertyChenged();
+            }
+        }
 
 
         public static string Answer1 = "";
@@ -241,8 +263,7 @@ namespace pr7.ViewModel
             but7 = new BindableCommand(_ => but7_());
             but8 = new BindableCommand(_ => but8_());
             but9 = new BindableCommand(_ => but9_());
-            start = new BindableCommand(_ => start_());
-
+            Stat = new BindableCommand(_ => Stist());
         }
 
         public ICommand User_ { get; }
@@ -265,7 +286,7 @@ namespace pr7.ViewModel
         public ICommand but8 { get; }
         public ICommand but9 { get; }
 
-        public ICommand start { get; }
+        public ICommand Stat { get; }
 
 
         private void Unlock()
@@ -281,6 +302,39 @@ namespace pr7.ViewModel
             Enable9 = "true";
         }
 
+        private void Lock()
+        {
+            Enable1 = "False";
+            Enable2 = "False";
+            Enable3 = "False";
+            Enable4 = "False";
+            Enable5 = "False";
+            Enable6 = "False";
+            Enable7 = "False";
+            Enable8 = "False";
+            Enable9 = "False";
+            answer = "";
+            answer1 = "";
+            answer2 = "";
+            answer3 = "";
+            answer4 = "";
+            answer5 = "";
+            answer6 = "";
+            answer7 = "";
+            answer8 = "";
+            a1 = "";
+            a2 = "";
+            a3 = "";
+            a4 = "";
+            a5 = "";
+            a6 = "";
+            a7 = "";
+            a8 = "";
+            a9 = "";
+            ch_us = "false";
+            ch_ro = "false";
+            
+        }
         private void Robot()
         {
             if (c == 0)
@@ -358,13 +412,37 @@ namespace pr7.ViewModel
             int win = g.Win();
             if (win == 0)
             {
-                MessageBox.Show("0");
+                statistic statistic = new statistic()
+                {
+                    name = "Ничья",
+                    GM = 1
+                };
+                st.Add(statistic);
+                MessageBox.Show("Ничья");
+                Lock();
             }
             else if (win == 1)
             {
-                MessageBox.Show(user);
+                statistic statistic = new statistic()
+                {
+                    name = user,
+                    GM = 1
+                };
+                st.Add(statistic);
+                MessageBox.Show("Победил: " + user);
+                Lock();
             }
-            else if (win == 2) { MessageBox.Show("Робот"); }
+            else if (win == 2) 
+            {
+                statistic statistic = new statistic()
+                {
+                    name = "Ничья",
+                    GM = 1
+                };
+                st.Add(statistic);
+                MessageBox.Show("Победил: Робот");
+                Lock();
+            }
 
         }
 
@@ -457,9 +535,10 @@ namespace pr7.ViewModel
         }
 
 
-        private void start_()
+        private void Stist()
         {
-            MessageBox.Show("1");
+            Statistic stat = new Statistic();
+            stat.Show();
             //Game_Function game = new Game_Function();
             
         }
