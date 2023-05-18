@@ -240,8 +240,8 @@ namespace pr7.ViewModel.Logic_Helper
         {
             bool us = false;
             bool ro = false;
-
             int a = -1;
+            
 
             try
             {

@@ -333,7 +333,7 @@ namespace pr7.ViewModel
             a9 = "";
             ch_us = "false";
             ch_ro = "false";
-            
+            count = 0;
         }
         private void Robot()
         {
@@ -436,7 +436,7 @@ namespace pr7.ViewModel
             {
                 statistic statistic = new statistic()
                 {
-                    name = "Ничья",
+                    name = "Робот",
                     GM = 1
                 };
                 st.Add(statistic);
