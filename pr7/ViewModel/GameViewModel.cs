@@ -17,13 +17,30 @@ namespace pr7.ViewModel
     {
         
         public static string user { get; set; } = "";
+        int c = 0;
 
+        public static int count = 0;  
 
         public static List<string> id_ = new List<string> { };
 
+        public static string a1 = "";
+        public static string a2 = "";
+        public static string a3 = "";
+        public static string a4 = "";
+        public static string a5 = "";
+        public static string a6 = "";
+        public static string a7 = "";
+        public static string a8 = "";
+        public static string a9 = "";
+
+
+
+
+
+
+
 
         public static string Answer1 = "";
-        public static string Answer2 = "";
 
         public string answer
         {
@@ -37,10 +54,10 @@ namespace pr7.ViewModel
 
         public string answer1
         {
-            get { return Answer2; }
+            get { return Answer1; }
             set
             {
-                Answer2 = value;
+                Answer1 = value;
                 OnPropertyChenged();
             }
         }
@@ -213,7 +230,7 @@ namespace pr7.ViewModel
 
         public GameViewModel()
         {
-            User_ = new BindableCommand(_ => Connect_());
+            User_ = new BindableCommand(_ => Unlock());
             Robot_ = new BindableCommand(_ => Robot());
             but1 = new BindableCommand(_ => but1_());
             but2 = new BindableCommand(_ => but2_());
@@ -250,10 +267,9 @@ namespace pr7.ViewModel
 
         public ICommand start { get; }
 
-        private void Connect_()
+
+        private void Unlock()
         {
-           
-            //MessageBox.Show("User");
             Enable1 = "true";
             Enable2 = "true";
             Enable3 = "true";
@@ -267,9 +283,89 @@ namespace pr7.ViewModel
 
         private void Robot()
         {
+            if (c == 0)
+            {
+                Unlock();
+                c++;
+            }
+            
             Game_Function g = new Game_Function();
             int a = g.Random_();
-            MessageBox.Show(a.ToString());
+            if (a == 1)
+            {
+                Enable1 = "False";
+                answer = "0";
+                a1 = "0";
+                count++;
+
+            }
+            else if (a == 2)
+            {
+                Enable2 = "False";
+                answer1 = "0";
+                a2 = "0";
+                count++;
+            }
+            else if (a == 3)
+            {
+                Enable3 = "False";
+                answer2 = "0";
+                a3 = "0";
+                count++;
+            }
+            else if (a == 4)
+            {
+                Enable4 = "False";
+                answer3 = "0";
+                a4 = "0";
+                count++;
+            }
+            else if (a == 5)
+            {
+                Enable5 = "False";
+                answer4 = "0";
+                a5 = "0";
+                count++;
+            }
+            else if (a == 6)
+            {
+                Enable6 = "False";
+                answer5 = "0";
+                a6 = "0";
+                count++;
+            }
+            else if (a == 7)
+            {
+                Enable7 = "False";
+                answer6 = "0";
+                a7 = "0";
+                count++;
+            }
+            else if (a == 8)
+            {
+                Enable8 = "False";
+                answer7 = "0";
+                a8 = "0";
+                count++;
+            }
+            else if (a == 9)
+            {
+                Enable9 = "False";
+                answer8 = "0";
+                a9 = "0";
+                count++;
+            }
+            int win = g.Win();
+            if (win == 0)
+            {
+                MessageBox.Show("0");
+            }
+            else if (win == 1)
+            {
+                MessageBox.Show(user);
+            }
+            else if (win == 2) { MessageBox.Show("Робот"); }
+
         }
 
         private void but1_()
@@ -277,6 +373,8 @@ namespace pr7.ViewModel
             answer = "X";
             id_.Add("1");
             Enable1 = "false";
+            a1 = "X";
+            count++;
             Robot();
         }
 
@@ -285,6 +383,9 @@ namespace pr7.ViewModel
             answer1 = "X";
             id_.Add("2");
             Enable2 = "false";
+            a2 = "X";
+            count++;
+            Robot();
         }
 
         private void but3_()
@@ -292,6 +393,9 @@ namespace pr7.ViewModel
             answer2 = "X";
             id_.Add("3");
             Enable3 = "false";
+            a3 = "X";
+            count++;
+            Robot();
         }
 
         private void but4_()
@@ -299,6 +403,9 @@ namespace pr7.ViewModel
             answer3 = "X";
             id_.Add("4");
             Enable4 = "false";
+            a4 = "X";
+            count++;
+            Robot();
         }
 
         private void but5_()
@@ -306,6 +413,9 @@ namespace pr7.ViewModel
             answer4 = "X";
             id_.Add("5");
             Enable5 = "false";
+            a5 = "X";
+            count++;
+            Robot();
         }
 
         private void but6_()
@@ -313,18 +423,27 @@ namespace pr7.ViewModel
             answer5 = "X";
             id_.Add("6");
             Enable6 = "false";
+            a6 = "X";
+            count++;
+            Robot();
         }
         private void but7_()
         {
             answer6 = "X";
             id_.Add("7");
             Enable7 = "false";
+            a7 = "X";
+            count++;
+            Robot();
         }
         private void but8_()
         {
             answer7 = "X";
             id_.Add("8");
             Enable8 = "false";
+            a8 = "X";
+            count++;
+            Robot();
         }
 
         private void but9_()
@@ -332,6 +451,9 @@ namespace pr7.ViewModel
             answer8 = "X";
             id_.Add("9");
             Enable9 = "false";
+            a9 = "X";
+            count++;
+            Robot();
         }
 
 
