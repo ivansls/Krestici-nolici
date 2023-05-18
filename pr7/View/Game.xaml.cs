@@ -20,10 +20,11 @@ namespace pr7.View
     /// </summary>
     public partial class Game : Window
     {
+
         public Game()
         {
             InitializeComponent();
-           
+
             DataContext = new GameViewModel();
         }
     }

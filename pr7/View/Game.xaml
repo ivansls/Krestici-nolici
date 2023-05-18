@@ -20,19 +20,18 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="button1" Content="{Binding answer}" Command="{Binding but1}" Grid.Column="0" Grid.Row="0" Margin="10,10,10,10" IsEnabled="False" />
-        <Button x:Name="button2" Content="{Binding answer1}" Command="{Binding but2}" Grid.Column="1" Grid.Row="0" Margin="10,10,10,10" />
-        <Button x:Name="button3" Content="{Binding answer2}" Command="{Binding but3}" Grid.Column="2" Grid.Row="0" Margin="10,10,10,10"/>
-        <Button x:Name="button4" Content="{Binding answer3}" Command="{Binding but4}" Grid.Column="0" Grid.Row="1" Margin="10,10,10,10"/>
-        <Button x:Name="button5" Content="{Binding answer4}" Command="{Binding but5}" Grid.Column="1" Grid.Row="1" Margin="10,10,10,10"/>
-        <Button x:Name="button6" Content="{Binding answer5}" Command="{Binding but6}" Grid.Column="2" Grid.Row="1" Margin="10,10,10,10"/>
-        <Button x:Name="button7" Content="{Binding answer6}" Command="{Binding but7}" Grid.Column="0" Grid.Row="2" Margin="10,10,10,10"/>
-        <Button x:Name="button8" Content="{Binding answer7}" Command="{Binding but8}" Grid.Column="1" Grid.Row="2" Margin="10,10,10,10"/>
-        <Button x:Name="button9" Content="{Binding answer8}" Command="{Binding but9}" Grid.Column="2" Grid.Row="2" Margin="10,10,10,10" />
-        <RadioButton x:Name="i_" Content="Human" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center"/>
-        <RadioButton x:Name="User" Content="Robot"  VerticalAlignment="Center" Grid.Column="2" Grid.Row="3" Command="{Binding User_}"/>
-        <Button x:Name="Start" Content="START" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" Command="{Binding start}"/>
-        <TextBlock x:Name="textblock" Text="{Binding user}" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <Button x:Name="Statistic" Content="Statistic" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="3"/>
+        <Button Content="{Binding answer}" Command="{Binding but1}" Grid.Column="0" Grid.Row="0" Margin="10,10,10,10" IsEnabled="{Binding Enable1}" />
+        <Button Content="{Binding answer1}" Command="{Binding but2}" Grid.Column="1" Grid.Row="0" Margin="10,10,10,10" IsEnabled="{Binding Enable2}"/>
+        <Button Content="{Binding answer2}" Command="{Binding but3}" Grid.Column="2" Grid.Row="0" Margin="10,10,10,10" IsEnabled="{Binding Enable3}"/>
+        <Button Content="{Binding answer3}" Command="{Binding but4}" Grid.Column="0" Grid.Row="1" Margin="10,10,10,10" IsEnabled="{Binding Enable4}"/>
+        <Button Content="{Binding answer4}" Command="{Binding but5}" Grid.Column="1" Grid.Row="1" Margin="10,10,10,10" IsEnabled="{Binding Enable5}"/>
+        <Button Content="{Binding answer5}" Command="{Binding but6}" Grid.Column="2" Grid.Row="1" Margin="10,10,10,10" IsEnabled="{Binding Enable6}"/>
+        <Button Content="{Binding answer6}" Command="{Binding but7}" Grid.Column="0" Grid.Row="2" Margin="10,10,10,10" IsEnabled="{Binding Enable7}"/>
+        <Button Content="{Binding answer7}" Command="{Binding but8}" Grid.Column="1" Grid.Row="2" Margin="10,10,10,10" IsEnabled="{Binding Enable8}"/>
+        <Button  Content="{Binding answer8}" Command="{Binding but9}" Grid.Column="2" Grid.Row="2" Margin="10,10,10,10" IsEnabled="{Binding Enable9}"/>
+        <RadioButton Content="{Binding user}" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" Command="{Binding User_}"/>
+        <RadioButton  Content="Robot"  VerticalAlignment="Center" Grid.Column="2" Grid.Row="3" Command="{Binding Robot_}"/>
+        <TextBlock Text="{Binding user}" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button  Content="Statistic" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="3"/>
     </Grid>
 </Window>

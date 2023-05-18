@@ -1,4 +1,5 @@
-﻿using pr7.ViewModel.Helpers;
+﻿using pr7.View;
+using pr7.ViewModel.Helpers;
 using pr7.ViewModel.Logic_Helper;
 using System;
 using System.Collections.Generic;
@@ -17,27 +18,14 @@ namespace pr7.ViewModel
         
         public static string user { get; set; } = "";
 
-        public static string Answer = "";
+
+        public static List<string> id_ = new List<string> { };
+
+
         public static string Answer1 = "";
         public static string Answer2 = "";
-        public static string Answer3 = "";
-        public static string Answer4 = "";
-        public static string Answer5 = "";
-        public static string Answer6 = "";
-        public static string Answer7 = "";
-        public static string Answer8 = "";
 
         public string answer
-        {
-            get { return Answer; }
-            set
-            {
-                Answer = value;
-                OnPropertyChenged();
-            }
-        }
-
-        public string answer1
         {
             get { return Answer1; }
             set
@@ -47,7 +35,7 @@ namespace pr7.ViewModel
             }
         }
 
-        public string answer2
+        public string answer1
         {
             get { return Answer2; }
             set
@@ -57,71 +45,176 @@ namespace pr7.ViewModel
             }
         }
 
-        public string answer3
+        public string answer2
         {
-            get { return Answer3; }
+            get { return Answer1; }
             set
             {
-                Answer3 = value;
+                Answer1 = value;
+                OnPropertyChenged();
+            }
+        }
+
+        public string answer3
+        {
+            get { return Answer1; }
+            set
+            {
+                Answer1 = value;
                 OnPropertyChenged();
             }
         }
 
         public string answer4
         {
-            get { return Answer4; }
+            get { return Answer1; }
             set
             {
-                Answer4 = value;
+                Answer1 = value;
                 OnPropertyChenged();
             }
         }
 
         public string answer5
         {
-            get { return Answer5; }
+            get { return Answer1; }
             set
             {
-                Answer5 = value;
+                Answer1 = value;
                 OnPropertyChenged();
             }
         }
 
         public string answer6
         {
-            get { return Answer6; }
+            get { return Answer1; }
             set
             {
-                Answer6 = value;
+                Answer1 = value;
                 OnPropertyChenged();
             }
         }
 
         public string answer7
         {
-            get { return Answer7; }
+            get { return Answer1; }
             set
             {
-                Answer7 = value;
+                Answer1 = value;
                 OnPropertyChenged();
             }
         }
 
         public string answer8
         {
-            get { return Answer8; }
+            get { return Answer1; }
             set
             {
-                Answer8 = value;
+                Answer1 = value;
                 OnPropertyChenged();
             }
         }
 
 
+        public static string enable1 = "false";
+
+
+        public string Enable1
+        {
+            get { return enable1; }
+            set
+            {
+                enable1 = value;
+                OnPropertyChenged();
+            }
+        }
+
+        public string Enable2
+        {
+            get { return enable1; }
+            set
+            {
+                enable1 = value;
+                OnPropertyChenged();
+            }
+        }
+
+
+        public string Enable3
+        {
+            get { return enable1; }
+            set
+            {
+                enable1 = value;
+                OnPropertyChenged();
+            }
+        }
+
+        public string Enable4
+        {
+            get { return enable1; }
+            set
+            {
+                enable1 = value;
+                OnPropertyChenged();
+            }
+        }
+
+        public string Enable5
+        {
+            get { return enable1; }
+            set
+            {
+                enable1 = value;
+                OnPropertyChenged();
+            }
+        }
+
+        public string Enable6
+        {
+            get { return enable1; }
+            set
+            {
+                enable1 = value;
+                OnPropertyChenged();
+            }
+        }
+
+        public string Enable7
+        {
+            get { return enable1; }
+            set
+            {
+                enable1 = value;
+                OnPropertyChenged();
+            }
+        }
+
+        public string Enable8
+        {
+            get { return enable1; }
+            set
+            {
+                enable1 = value;
+                OnPropertyChenged();
+            }
+        }
+
+        public string Enable9
+        {
+            get { return enable1; }
+            set
+            {
+                enable1 = value;
+                OnPropertyChenged();
+            }
+        }
+
 
         public GameViewModel()
         {
             User_ = new BindableCommand(_ => Connect_());
+            Robot_ = new BindableCommand(_ => Robot());
             but1 = new BindableCommand(_ => but1_());
             but2 = new BindableCommand(_ => but2_());
             but3 = new BindableCommand(_ => but3_());
@@ -136,6 +229,8 @@ namespace pr7.ViewModel
         }
 
         public ICommand User_ { get; }
+
+        public ICommand Robot_ { get; }
         public ICommand but1 { get; }
 
         public ICommand but2 { get; }
@@ -157,58 +252,94 @@ namespace pr7.ViewModel
 
         private void Connect_()
         {
-            
+           
+            //MessageBox.Show("User");
+            Enable1 = "true";
+            Enable2 = "true";
+            Enable3 = "true";
+            Enable4 = "true";
+            Enable5 = "true";
+            Enable6 = "true";
+            Enable7 = "true";
+            Enable8 = "true";
+            Enable9 = "true";
+        }
+
+        private void Robot()
+        {
+            Game_Function g = new Game_Function();
+            int a = g.Random_();
+            MessageBox.Show(a.ToString());
         }
 
         private void but1_()
         {
             answer = "X";
+            id_.Add("1");
+            Enable1 = "false";
+            Robot();
         }
 
         private void but2_()
         {
             answer1 = "X";
+            id_.Add("2");
+            Enable2 = "false";
         }
 
         private void but3_()
         {
             answer2 = "X";
+            id_.Add("3");
+            Enable3 = "false";
         }
 
         private void but4_()
         {
             answer3 = "X";
+            id_.Add("4");
+            Enable4 = "false";
         }
 
         private void but5_()
         {
             answer4 = "X";
+            id_.Add("5");
+            Enable5 = "false";
         }
 
         private void but6_()
         {
             answer5 = "X";
+            id_.Add("6");
+            Enable6 = "false";
         }
         private void but7_()
         {
             answer6 = "X";
+            id_.Add("7");
+            Enable7 = "false";
         }
         private void but8_()
         {
             answer7 = "X";
+            id_.Add("8");
+            Enable8 = "false";
         }
 
         private void but9_()
         {
             answer8 = "X";
+            id_.Add("9");
+            Enable9 = "false";
         }
 
 
         private void start_()
         {
             MessageBox.Show("1");
-            Game_Function game = new Game_Function();
-            game.sstart();
+            //Game_Function game = new Game_Function();
+            
         }
 
 
