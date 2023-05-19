@@ -8,12 +8,13 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
-using System.Xml.Linq;
 
 namespace pr7.ViewModel
 {
+    
     internal class MainViewModel : BindingHelper
     {
+        
         private static string UserName;
 
        
@@ -37,19 +38,25 @@ namespace pr7.ViewModel
 
         private void Create_()
         {
-            if (UserName == "")
+            if (_userName == null)
             {
-                MessageBox.Show("Веди ip");
+                MessageBox.Show("Веди имя");
             }
             else
             {
-                
+               
                 GameViewModel.user = UserName;
                 Game game = new Game();
                 game.Show();
+                MainWindow win = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+                if (win != null)
+                {
+                    win.Close();
+                }
 
             }
         }
+
 
         
     }

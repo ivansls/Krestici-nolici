@@ -253,7 +253,7 @@ namespace pr7.ViewModel
         public GameViewModel()
         {
             User_ = new BindableCommand(_ => Unlock());
-            Robot_ = new BindableCommand(_ => Robot());
+            Robot_ = new BindableCommand(_ => Rob());
             but1 = new BindableCommand(_ => but1_());
             but2 = new BindableCommand(_ => but2_());
             but3 = new BindableCommand(_ => but3_());
@@ -291,6 +291,7 @@ namespace pr7.ViewModel
 
         private void Unlock()
         {
+
             Enable1 = "true";
             Enable2 = "true";
             Enable3 = "true";
@@ -335,6 +336,13 @@ namespace pr7.ViewModel
             ch_ro = "false";
             count = 0;
         }
+
+        private void Rob()
+        {
+            c = 0;
+            Robot();
+        }
+
         private void Robot()
         {
             if (c == 0)
@@ -537,6 +545,10 @@ namespace pr7.ViewModel
 
         private void Stist()
         {
+            StatisticViewModel statistica_ = new StatisticViewModel();
+            statistica_.n = user;
+
+            statistica_.FOr_(st);
             Statistic stat = new Statistic();
             stat.Show();
             //Game_Function game = new Game_Function();

@@ -17,9 +17,9 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <DataGrid Grid.ColumnSpan="3" ItemsSource="{Binding List}"/>
-        <Button Content="BACK"  Grid.Row="1" />
-        <TextBlock Grid.Column="2"  Grid.Row="1" Text="TextBlock" VerticalAlignment="Top"/>
-        <TextBlock Grid.Column="2"  Grid.Row="1" Text="TextBlock" VerticalAlignment="Center"/>
-        <TextBlock Grid.Column="2" Grid.Row="1"  Text="TextBlock" VerticalAlignment="Bottom"/>
+        <Button Content="BACK"  Grid.Row="1" Command="{Binding Back}"/>
+        <TextBlock Grid.Column="2"  Grid.Row="1" Text="{Binding user1}" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="2"  Grid.Row="1" Text="{Binding robot}" VerticalAlignment="Center"/>
+        <TextBlock Grid.Column="2" Grid.Row="1"  Text="{Binding none}" VerticalAlignment="Bottom"/>
     </Grid>
 </Window>

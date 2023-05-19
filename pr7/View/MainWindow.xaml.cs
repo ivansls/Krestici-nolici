@@ -23,7 +23,6 @@ namespace pr7
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static bool IsServer = false;
         public MainWindow()
         {
             InitializeComponent();
